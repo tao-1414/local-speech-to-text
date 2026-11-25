@@ -1,0 +1,2 @@
+chinese.wav: 你好，欢迎使用语音识别系统。
+english.wav: Hello, welcome to the speech recognition system.

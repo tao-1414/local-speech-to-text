@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>本地语音识别</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>本地语音识别</h1>
+      <p class="subtitle">Local AI Speech-to-Text</p>
+    </header>
+
+    <section class="card">
+      <h2>识别语言</h2>
+      <div class="language-select" id="languageSelect">
+        <label class="radio">
+          <input type="radio" name="language" value="zh" checked />
+          <span>中文</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="language" value="en" />
+          <span>English</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>麦克风录音</h2>
+      <div class="status-bar">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">就绪</span>
+        <span class="spacer"></span>
+        <span id="durationText">00:00</span>
+      </div>
+      <div class="controls">
+        <button id="startBtn" class="btn btn-primary">开始录音</button>
+        <button id="stopBtn" class="btn btn-danger" disabled>停止录音</button>
+      </div>
+      <label class="realtime-toggle">
+        <input type="checkbox" id="realtimeCheck" />
+        <span>实时识别（加分功能）</span>
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>音频文件上传</h2>
+      <input type="file" id="fileInput" accept=".wav,.webm,.mp3,.m4a,.flac,.ogg,audio/*" />
+      <p class="hint">支持 WAV、WebM、MP3 等格式，大小不超过 10 MB。</p>
+    </section>
+
+    <section class="card">
+      <h2>识别结果</h2>
+      <div class="result-meta" id="resultMeta"></div>
+      <div class="result-box" id="resultBox">
+        <p class="placeholder" id="resultPlaceholder">识别结果将显示在这里</p>
+        <p class="result-text" id="resultText"></p>
+      </div>
+      <button id="copyBtn" class="btn btn-ghost" disabled>复制文字</button>
+    </section>
+  </main>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
